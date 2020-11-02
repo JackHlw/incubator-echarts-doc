@@ -140,6 +140,18 @@ const option = {
     defaultFontSize = 11
 ) }}
 
+## labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = '##',
+    length2 = true,
+    minTurnAngle = true,
+    showAbove = true,
+    smooth = true
+) }}
+
 ## labelLayout(Object|Function)
 
 {{ use: partial-label-layout(
@@ -166,6 +178,10 @@ const option = {
 
 ## blur(Object)
 
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
+
 淡出状态的配置。
 
 {{ use: themeRiver-state(
@@ -173,6 +189,10 @@ const option = {
 ) }}
 
 ## select(Object)
+
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
 
 选中状态的配置。
 
@@ -234,6 +254,15 @@ data: [
     noVerticalAlign = true,
     defaultColor = "'#000'",
     defaultFontSize = 11
+) }}
+
+
+#${prefix} labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = '#' + ${prefix}
 ) }}
 
 #${prefix} itemStyle(Object)

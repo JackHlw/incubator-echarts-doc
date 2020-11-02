@@ -11,11 +11,12 @@
     <div class="hierarchy-line" v-if="expanded"></div>
     <h4>
         <span class="guider" v-if="depth > 1"></span>
-        <el-button plain circle size="mini"
+        <i
+            class="expand-toggle"
             v-if="supportsExpandable"
-            :icon="expanded ? 'el-icon-minus' : 'el-icon-plus'"
+            :class="expanded ? 'el-icon-remove-outline' : 'el-icon-circle-plus-outline'"
             @click="toggleExpanded"
-        ></el-button>
+        ></i>
         <!-- <a v-else class="anchor" href="">#</a> -->
         <span class="path-parent" v-if="!shared.isMobile">
             <a :href="'#' + item.link" :key="item.link" v-for="item in parentPath">{{item.text}}.</a>
@@ -221,7 +222,7 @@ export default {
 $card-margin: 15px;
 $children-padding: 10px;
 
-$hierarchy-guider-color: #C592A0;
+$hierarchy-guider-color: #E0E6F1;
 
 .doc-content-item-card {
 
@@ -260,18 +261,13 @@ $hierarchy-guider-color: #C592A0;
         }
         // opacity: 0.9;
 
-        .el-button {
-            padding: 2px;
-            font-size: 12px;
+        .expand-toggle {
+            font-size: 18px;
             margin-left: -23px;
-            color: $hierarchy-guider-color;
-            border-color: $hierarchy-guider-color;
-            border-radius: 4px;
-
-            background: #fff;
-
-
+            color: darken($hierarchy-guider-color, 20%);
+            cursor: pointer;
             position: relative;
+            background-color: #fff;
         }
 
         .anchor {

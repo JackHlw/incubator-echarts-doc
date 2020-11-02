@@ -111,6 +111,18 @@ const option = {
     formatter = true
 ) }}
 
+## labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = '##',
+    length2 = true,
+    minTurnAngle = true,
+    showAbove = true,
+    smooth = true
+) }}
+
 ## labelLayout(Object|Function)
 
 {{ use: partial-label-layout(
@@ -145,6 +157,10 @@ const option = {
 
 ## blur(Object)
 
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
+
 淡出状态的配置。开启 [emphasis.focus](~series-effectScatter.emphasis.focus) 后有效。
 
 {{ use: effectScatter-state(
@@ -152,6 +168,10 @@ const option = {
 ) }}
 
 ## select(Object)
+
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
 
 选中状态的配置。开启 [selectedMode](~series-effectScatter.selectedMode) 后有效。
 
@@ -194,6 +214,18 @@ const option = {
     defaultPosition = "inside"
 ) }}
 
+### labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = '###',
+    length2 = true,
+    minTurnAngle = true,
+    showAbove = true,
+    smooth = true
+) }}
+
 ### itemStyle(Object)
 
 {{ use: partial-item-style(
@@ -209,6 +241,10 @@ const option = {
 ) }}
 
 ### blur(Object)
+
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
 
 单个数据的淡出图形和标签样式。
 
@@ -248,7 +284,6 @@ const option = {
 {{ use: partial-tooltip-in-series() }}
 
 
-
 {{ target: effectScatter-state }}
 
 #${prefix} label(Object)
@@ -256,6 +291,14 @@ const option = {
 {{ use: partial-label(
     prefix = "#" + ${prefix},
     formatter = ${prefix} === '##'
+) }}
+
+#${prefix} labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = '#' + ${prefix}
 ) }}
 
 #${prefix} itemStyle(Object)

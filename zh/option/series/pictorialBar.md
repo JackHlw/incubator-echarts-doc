@@ -129,6 +129,18 @@ option = {
     formatter = true
 ) }}
 
+## labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = '##',
+    length2 = true,
+    minTurnAngle = true,
+    showAbove = true,
+    smooth = true
+) }}
+
 ## labelLayout(Object|Function)
 
 {{ use: partial-label-layout(
@@ -157,6 +169,10 @@ option = {
 
 ## blur(Object)
 
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
+
 淡出状态配置。开启 [emphasis.focus](~series-pictoialBar.emphasis.focus) 后有效。
 
 {{ use: pictoialBar-state(
@@ -164,6 +180,10 @@ option = {
 ) }}
 
 ## select(Object)
+
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
 
 选中状态配置。开启 [selectedMode](~series-bar.selectedMode) 后有效。
 
@@ -218,6 +238,18 @@ option = {
     defaultPosition = "inside"
 ) }}
 
+### labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = '###',
+    length2 = true,
+    minTurnAngle = true,
+    showAbove = true,
+    smooth = true
+) }}
+
 ### itemStyle(Object)
 
 {{ use: partial-item-style(
@@ -234,6 +266,10 @@ option = {
 
 ### blur(Object)
 
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
+
 单个数据的淡出状态配置。
 
 {{ use: partial-bar-state(
@@ -241,6 +277,10 @@ option = {
 ) }}
 
 ### select(Object)
+
+{{ use: partial-version(
+    version = "5.0.0"
+) }}
 
 单个数据的选中状态配置。
 
@@ -625,6 +665,15 @@ series: [{
 {{ use: partial-label(
     prefix = "#" + ${prefix},
     formatter = ${prefix} === '##'
+) }}
+
+
+#${prefix} labelLine(Object)
+
+{{ use: partial-label-line-desc() }}
+
+{{ use: partial-label-line(
+    prefix = "#" + ${prefix}
 ) }}
 
 #${prefix} itemStyle(Object)
